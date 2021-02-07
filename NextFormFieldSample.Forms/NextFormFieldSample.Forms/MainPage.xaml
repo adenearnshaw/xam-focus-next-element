@@ -1,48 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Class="NextFormFieldSample.Forms.MainPage"
-             xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:behaviors="clr-namespace:NextFormFieldSample.Forms.Behaviors"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             ios:Page.UseSafeArea="True"
-             mc:Ignorable="d">
+<ContentPage
+    x:Class="NextFormFieldSample.Forms.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:attachedProperties="clr-namespace:NextFormFieldSample.Forms.AttachedProperties"
+    xmlns:behaviors="clr-namespace:NextFormFieldSample.Forms.Behaviors"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ios:Page.UseSafeArea="True"
+    mc:Ignorable="d">
 
     <StackLayout Margin="20">
-        <Label FontSize="Large"
-               HorizontalOptions="Center"
-               Text="Please fill in this form"
-               VerticalOptions="Start" />
+        <Label
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="Please fill in this form"
+            VerticalOptions="Start" />
 
-        <Entry x:Name="Entry1"
-               Placeholder="Field 1"
-               TabIndex="1">
-            <Entry.Behaviors>
-                <behaviors:SetFocusOnEntryCompletedBehavior TargetElement="{x:Reference Entry2}" />
-            </Entry.Behaviors>
-        </Entry>
+        <Entry
+            x:Name="Entry1"
+            attachedProperties:SetFocusOnEntryCompleted.TargetElement="{x:Reference Entry2}"
+            Placeholder="Field 1"
+            TabIndex="1" />
 
 
-        <Entry x:Name="Entry2"
-               Placeholder="Field 2"
-               TabIndex="2">
+        <Entry
+            x:Name="Entry2"
+            Placeholder="Field 2"
+            TabIndex="2">
             <Entry.Behaviors>
                 <behaviors:SetFocusOnEntryCompletedBehavior TargetElement="{x:Reference Entry3}" />
             </Entry.Behaviors>
         </Entry>
 
-        <Entry x:Name="Entry3"
-               Placeholder="Field 3"
-               TabIndex="3">
+        <Entry
+            x:Name="Entry3"
+            Placeholder="Field 3"
+            TabIndex="3">
             <Entry.Behaviors>
                 <behaviors:SetFocusOnEntryCompletedBehavior TargetElement="{x:Reference Entry4}" />
             </Entry.Behaviors>
         </Entry>
 
-        <Entry x:Name="Entry4"
-               Placeholder="Field 4"
-               TabIndex="4" />
+        <Entry
+            x:Name="Entry4"
+            Placeholder="Field 4"
+            TabIndex="4" />
     </StackLayout>
 
 </ContentPage>
